@@ -14,8 +14,11 @@
 	enableSwiper();
 	
 	
-	
-	$('a[href="#"]').on('click', function(event){
+	// Mobile click fix
+	$('a').on('click', function(event){
+		const href = event.target.getAttribute("href");
+
+		if (href) window.location.href = href;
 		return;
 	});
 	
